@@ -17,16 +17,22 @@ class MyInput extends Component {
   handleChangeInput(e) {
     const value = e.target.value;
     const { myInputObj, onChangeMyInput } = this.props;
-    onChangeMyInput({
-      ...myInputObj,
-      lastName: value
+    // onChangeMyInput({
+    //   ...myInputObj,
+    //   lastName: value
+    // });
+    this.props.form.setFieldsValue({
+      lastName: value,
     });
   }
 
   handleChangeSelect(value) {
     const { myInputObj, onChangeMyInput } = this.props;
-    onChangeMyInput({
-      ...myInputObj,
+    // onChangeMyInput({
+    //   ...myInputObj,
+    //   firstName: value,
+    // });
+    this.props.form.setFieldsValue({
       firstName: value,
     });
   }
